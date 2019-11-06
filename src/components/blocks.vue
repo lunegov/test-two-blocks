@@ -14,7 +14,9 @@
       </div>
       <div
         v-html="b.bText"
+        :contenteditable="!!b.editable"
         class="blocks-item__text"
+        @click="setEditable(b.blockID)"
       />
     </div>
   </div>
@@ -61,7 +63,7 @@ export default {
   overflow-x auto
   &-item
     display block
-    margin-bottom 32px
+    margin 0 auto 32px
     padding 8px 16px
     border 1px solid #c2c2c2
     border-radius 8px
